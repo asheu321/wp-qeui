@@ -2,7 +2,7 @@
 /*
 Plugin Name: Quick Edit Upload Image
 Description: Upload featured image through quick edit post/page
-Plugin URI: http://www.aguspriyanto.net/quick-edit-upload-image/
+Plugin URI: http://www.aguspriyanto.net/
 Author: Agus Priyanto
 Author URI: http://ww.aguspriyanto.net/
 Version: 1.0
@@ -28,7 +28,7 @@ License: GPL2
 */
 
 function qeui_register_setting() {
-    //register_setting( 'qeui_options', 'qeui_place', 'post' );     
+    register_setting( 'qeui_options', 'qeui_place', 'post' );     
 }
 add_action( 'admin_init', 'qeui_register_setting' );
 
@@ -65,7 +65,6 @@ function get_current_post_type() {
 }
 
 // Add Settings page
-/*
 add_action( 'admin_menu', 'qeui_register_setting_page' );
 function qeui_register_setting_page() {
     add_options_page( 'QE Upload Image', 'QE Upload Image', 'manage_options', 'qeui_settings', 'qeui_settings_callback');
@@ -73,7 +72,7 @@ function qeui_register_setting_page() {
 
 function qeui_settings_callback() {
 
-}*/
+}
 
 add_filter('manage_post_posts_columns', 'qeui_add_post_columns');
 function qeui_add_post_columns($columns) {
@@ -170,3 +169,7 @@ function qeui_action_links( $links ) {
    $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=qeui_settings') .'">Settings</a>';
    return $links;
 }
+
+/*
+Testing links
+*/
