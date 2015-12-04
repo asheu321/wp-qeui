@@ -1,3 +1,4 @@
+/* Test edited by agus1 */
 jQuery(document).ready(function($) {
 	jQuery('.qeui-thumb-remove').click(function(e) {
 		/* Act on the event */
