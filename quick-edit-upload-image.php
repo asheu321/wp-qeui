@@ -10,7 +10,7 @@ License: GPL2
 */
 
 /* Agus2 edit disini juga */
-
+/* Coba ganti user beneran asheu2 ga */
 /*
 
     Copyright (C) 2014  Agus Priyanto  asheu321@gmail.com
