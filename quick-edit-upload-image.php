@@ -9,6 +9,8 @@ Version: 1.0
 License: GPL2
 */
 
+/* Agus2 edit disini juga */
+
 /*
 
     Copyright (C) 2014  Agus Priyanto  asheu321@gmail.com
