@@ -9,8 +9,13 @@ Version: 1.0
 License: GPL2
 */
 
+
 /* Agus2 edit disini juga */
 /* Coba ganti user beneran asheu2 ga */
+
+/* Test by agus1  cikan*/
+/* nyoba2 dulu deh by agus1 */
+
 /*
 
     Copyright (C) 2014  Agus Priyanto  asheu321@gmail.com
@@ -173,5 +178,5 @@ function qeui_action_links( $links ) {
 }
 
 /*
-Testing links
+Testing using trello card id
 */
