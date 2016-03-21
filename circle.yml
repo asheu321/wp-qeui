@@ -1,0 +1,55 @@
+## Test machine setup
+machine:
+  timezone:
+    Asia/Jakarta #Set the machine timezone
+
+#Customize dependencies
+dependencies:
+  pre:
+
+  # Use cURL to fetch WP-CLI
+    - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+  # Make sure WP-CLI is executable
+    - chmod +x wp-cli.phar
+
+  # Remove plugin dir
+    - rm -rf plugin
+
+  # Clone wp core
+    - git clone git://core.git.wordpress.org/ plugin
+
+  # create database
+    - mysql -u ubuntu -e "create database plugin"
+
+  # Move to plugin dir
+    - cd plugin
+
+  # add wp config
+    - ./wp-cli.phar core config --allow-root --dbname=plugin --dbuser=ubuntu --dbhost=localhost --path=/home/ubuntu/wp-qeui/plugin
+
+  # Install wp
+    - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=asheu321@gmail.com --url=http://plugin.dev --title=Plugin --path=/home/ubuntu/wp-qeui/plugin
+
+  # download wp-qeui plugin
+    - git clone https://github.com/asheu321/wp-qeui.git
+
+  # Copy plugin to wp-plugin directory
+    - yes | cp -rf wp-qeui plugin/wp-content/plugins
+
+
+
+## test override
+test:
+  override:
+    # This is just for us to see that the WP plugins was actually installed and is active
+      - ./wp-cli.phar plugin list --path=/home/ubuntu/wp-qeui/plugin
+
+    # activate plugin 
+      - ./wp-cli.phar plugin activate wp-qeui --path=/home/ubuntu/wp-qeui/plugin
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - rsync -avze ssh /home/ubuntu/wp-qeui/wp-qeui $SSHUSERNAME@$SSHIP:$SERVERPATH
