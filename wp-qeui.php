@@ -134,15 +134,3 @@ function qeui_admin_head() {
     </style>
 <?php
 }
-
-// Add settings link on plugin page
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'qeui_action_links' );
-
-function qeui_action_links( $links ) {
-   $links[] = '<a href="'. get_admin_url(null, 'options-general.php?page=qeui_settings') .'">Settings</a>';
-   return $links;
-}
-
-/*
-Testing using trello card id
-*/
