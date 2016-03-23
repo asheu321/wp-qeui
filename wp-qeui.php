@@ -87,7 +87,8 @@ function qeui_admin_script() {
         wp_enqueue_script( 'qeui_main' );
         wp_localize_script( 'qeui_main', 'qeui_obj', 
             array(
-                'ajax_url' => admin_url('admin-ajax.php')
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'plugin_url' => plugins_url( '', __FILE__ )
             )
         );    
     //}

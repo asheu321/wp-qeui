@@ -1,4 +1,4 @@
-/* Test edited by agus1 */
+/* WP-Qeui JS*/
 jQuery(document).ready(function($) {
 	jQuery('.qeui-thumb-remove').click(function(e) {
 		/* Act on the event */
@@ -93,7 +93,7 @@ jQuery(document).ready(function($) {
 							success: function(response) {
 								jQuery('i.qeui-ajax-loading').fadeOut();
 								
-								jQuery('span.pid-'+response).after('<a class="button-secondary qeui-upload-button" href="#" id="qeui-button-'+response+'" data-id="'+response+'"><i class="qeui-ajax-loading" style="display:none"><img src="http://www.myfriendrecommends.com.au/wp-content/plugins/quick-edit-upload-image/images/ajax-loader.gif">  </i>Upload Image</a>');
+								jQuery('span.pid-'+response).after('<a class="button-secondary qeui-upload-button" href="#" id="qeui-button-'+response+'" data-id="'+response+'"><i class="qeui-ajax-loading" style="display:none"><img src="'+qeui_obj.plugin_url+'/images/ajax-loader.gif">  </i>Upload Image</a>');
 								jQuery('span.pid-'+response).remove(); 
 							}
 						});		
