@@ -1,37 +1,12 @@
 <?php
 /*
 Plugin Name: Quick Edit Upload Image
-Description: Upload featured image through quick edit post/page
+Description: Quick upload featured images through post list table
 Plugin URI: http://www.aguspriyanto.net/
 Author: Agus Priyanto
 Author URI: http://ww.aguspriyanto.net/
 Version: 1.0
 License: GPL2
-*/
-
-
-/* Agus2 edit disini juga */
-/* Coba ganti user beneran asheu2 ga */
-
-/* Test by agus1  cikan*/
-/* nyoba2 dulu deh by agus1 */
-
-/*
-
-    Copyright (C) 2014  Agus Priyanto  asheu321@gmail.com
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 function qeui_register_setting() {
@@ -71,15 +46,6 @@ function get_current_post_type() {
     
 }
 
-// Add Settings page
-add_action( 'admin_menu', 'qeui_register_setting_page' );
-function qeui_register_setting_page() {
-    add_options_page( 'QE Upload Image', 'QE Upload Image', 'manage_options', 'qeui_settings', 'qeui_settings_callback');
-}
-
-function qeui_settings_callback() {
-
-}
 
 add_filter('manage_post_posts_columns', 'qeui_add_post_columns');
 function qeui_add_post_columns($columns) {
